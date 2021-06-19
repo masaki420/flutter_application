@@ -37,27 +37,38 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  String text = '次へ';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('こんにちは'),
       ),
-      body: Center(
-        child: ElevatedButton(
-          child: Text('次へ'),
-          onPressed: () async {
-            //画面遷移のコードを書く
-            final result = await Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => NextPage('Masaki'),
-                ),
-            );
-            print(result);
-          },
+      body: Container(
+        width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Image.network('https://pbs.twimg.com/profile_images/1383466995853664262/3diSTCwR_400x400.jpg'),
+              ElevatedButton(
+                child: Text(text),
+                onPressed: () async {
+                  //画面遷移のコードを書く
+                  final result = await Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => NextPage('masaki'),
+                      ),
+                  );
+                  text = result;
+                  print(result);
+                },
+              ),
+            ],
+          ),
         ),
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
