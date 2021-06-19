@@ -51,6 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
+              Icon(
+                Icons.animation_sharp,
+              ),
               Image.asset('images/mononoke049.jpeg'),
               ElevatedButton(
                 child: Text(text),
