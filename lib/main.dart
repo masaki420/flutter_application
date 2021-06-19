@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app2/next_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,10 +44,17 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('こんにちは'),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('次へ'),
-          onPressed: (){
-            //
+          onPressed: () async {
+            //画面遷移のコードを書く
+            final result = await Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => NextPage('Masaki'),
+                ),
+            );
+            print(result);
           },
         ),
       ),
