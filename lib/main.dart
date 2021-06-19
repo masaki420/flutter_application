@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image.network('https://pbs.twimg.com/profile_images/1383466995853664262/3diSTCwR_400x400.jpg'),
+              Image.asset('images/mononoke049.jpeg'),
               ElevatedButton(
                 child: Text(text),
                 onPressed: () async {
